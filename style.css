@@ -45,7 +45,7 @@ h4 {
 }
 .contenedor{
     width: 95%;
-    max-width: 150rem;
+    max-width: 160rem;
     margin: 0 auto;
 }
 
@@ -59,69 +59,68 @@ h4 {
     grid-template-columns: 1.5fr 1fr;
 
     .textarea{
-        margin: 10rem 15rem;
+        margin: 10rem 0 0 10rem;
     }
 
     .mostrar-texto{
+        text-align: center;
         background-color: white;
-        width: 100%;
         max-width: 40rem;
-        margin: 0 5rem 2rem;
+        margin: 0 auto;
+        border-radius: 2rem;
     }
 }
 
 .formulario{
-
-
-    input:not([type="submit"]),
+    
     textarea{
         padding: 1rem;
-        display: inline block;
         background-color: white;
-        border: 1px solid gainsboro;
         border-radius: 1rem;
         margin-bottom: 2rem;
+        height: 50rem;
+        width: 100%;
+
     }
 
-    textarea{
-        height: 50rem;
-        width: 80rem;
+    input{
+
+        border-radius: 2.5rem;
+        font-weight: 700;
+        text-decoration: none;
+        text-align: center;
+        margin: 2rem 1rem;
+
+        border: 1px solid #0a3871;
+     
+
+        &:hover{
+            box-shadow: 0 10px 36px rgba(0, 0, 0, 0.15);
+            cursor: pointer;
+        }
     }
+}
+.botones-contenedor{
+    display: flex;
+    justify-content: center;
 }
 
 .boton-encriptar{
     
     background-color: #072b61;
     color: white;
-    font-weight: 700;
-    text-decoration: none;
-    padding: 1rem 3rem;
-    text-align: center;
-    margin-top: 5rem / 2;
-    display: inline-block;
-    border: none;
-    border-radius: 1rem;
-
-    &:hover{
-        background-color: darken(#072b61, 10);
-        cursor: pointer;
-    }
+    padding: 2rem 7rem;
+    
 }
 
 .boton-desencriptar{
     background-color: #e9ecf8;
     color: black;
-    font-weight: 700;
-    text-decoration: none;
-    padding: 1rem 3rem;
-    text-align: center;
-    margin-top: 5rem / 2;
-    display: inline-block;
-    border: none;
-    border-radius: 1rem;
+    padding: 2rem 5.62rem;
+
 
     &:hover{
-        background-color: darken(#e9ecf8, 10);
+        box-shadow: 0 10px 36px rgba(0, 0, 0, 0.15);
         cursor: pointer;
     }
 }
