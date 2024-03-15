@@ -49,26 +49,29 @@ h4 {
     margin: 0 auto;
 }
 
-.imagen{
-    left: 100px;
-    right: 100px;
-}
 
 .contenedor-main{
     display: grid;
-    grid-template-columns: 1.5fr 1fr;
-
-    .textarea{
-        margin: 10rem 0 0 10rem;
+    grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+    gap: 2rem;
+    @media screen and (max-width: 768px) {
+        .textarea {
+            margin: 2rem 0; /* Elimina el margen */
+        }
     }
 
-    .mostrar-texto{
-        text-align: center;
-        background-color: white;
-        max-width: 40rem;
-        margin: 0 auto;
-        border-radius: 2rem;
-    }
+}
+
+.textarea{
+    margin: 10rem 0 0 10rem;
+}
+
+.mostrar-texto{
+    text-align: center;
+    background-color: white;
+    max-width: 40rem;
+    margin: 0 auto;
+    border-radius: 2rem;
 }
 
 .formulario{
@@ -101,8 +104,9 @@ h4 {
     }
 }
 .botones-contenedor{
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 0.1rem;
 }
 
 .boton-encriptar{
@@ -110,19 +114,12 @@ h4 {
     background-color: #072b61;
     color: white;
     padding: 2rem 7rem;
-    
 }
 
 .boton-desencriptar{
     background-color: #e9ecf8;
     color: black;
     padding: 2rem 5.62rem;
-
-
-    &:hover{
-        box-shadow: 0 10px 36px rgba(0, 0, 0, 0.15);
-        cursor: pointer;
-    }
 }
 
 
