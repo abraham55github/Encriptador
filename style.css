@@ -54,9 +54,12 @@ h4 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
     gap: 2rem;
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 845px) {
         .textarea {
             margin: 2rem 0; /* Elimina el margen */
+        }
+        img{
+            display: none;
         }
     }
 
@@ -64,6 +67,19 @@ h4 {
 
 .textarea{
     margin: 10rem 0 0 10rem;
+}
+
+@media screen and (max-width: 390px) and (max-height: 844px) {
+    .contenedor-main {
+        grid-template-columns: 1fr; /* Cambia a una sola columna */
+    }
+
+    .textarea {
+        margin: 2rem auto; /* Ajusta el margen para centrar */
+        width: calc(100% - 2rem); /* Ajusta el ancho del textarea para dejar espacio para el margen */
+        max-width: calc(100% - 2rem); /* Ajusta el ancho máximo */
+        height: auto; /* Cambia la altura a automática */
+    }
 }
 
 .mostrar-texto{
