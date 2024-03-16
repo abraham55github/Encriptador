@@ -1,38 +1,38 @@
-document.addEventListener('DOMContentLoaded', function(){
 
-    iniciarApp();
+const botonEncriptar = document.querySelector('.boton-encriptar');
+const botonDesencriptar = document.querySelector('.boton-desencriptar');
+
+botonEncriptar.addEventListener('click', function(){
+    encriptarTexto();
 })
 
-function iniciarApp(){
-    encriptarTexto();
+function encriptarTexto(){
+    const texto = document.querySelector('#texto').value;
+    const tituloMensaje = document.querySelector('.titulo-mensaje')
+    const parrafo = document.querySelector('.parrafo')
+
+
+    let textoCifrado = texto
+        .replace(/e/gi, "enter")
+        .replace(/i/gi, "imes")
+        .replace(/a/gi, "ai")
+        .replace(/o/gi, "ober")
+        .replace(/u/gi, "ufat");
+
+
+    if (texto.length !== 0) {
+        noImage();
+        tituloMensaje.textContent = "Texto cifrado correctamente";
+        parrafo.textContent = textoCifrado;
+    }
+
+
 }
 
-function encriptarTexto(){
-    let texto = document.getElementById("textoUsuario").value.toLowerCase();
-    let resultado = "";
-
-    for (var i=0; i< texto.length; i++){
-        switch(texto[i]){
-            case 'e':
-                resultado += 'enter';
-                break;
-            case 'i':
-                resultado + 'imes';
-                break;
-            case 'a':
-                resultado += 'ai ';
-                break;
-            case 'o':
-                resultado += 'ober ';
-                break;
-            case 'u':
-                resultado += 'ufat ';
-                break;
-            default:
-                resultado += texto[i];
-        }
-
-        document.getElementById("mostrarTexto").innerHTML = "<h2>Texto encriptado: </h2><p>" + resultado + "</p>";
+function noImage(){
+    const imagen = document.querySelector('.imagen');
+    if(imagen){
+        imagen.classList.add('ocultar')
     }
 }
 
