@@ -55,6 +55,7 @@ function desencriptarTexto(){
 
     if (texto.length !== 0) {
         noImage();
+        btnCopiar();
         tituloMensaje.textContent = "Texto decifrado correctamente";
         parrafo.textContent = textoDecifrado;
     }
