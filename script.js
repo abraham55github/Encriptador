@@ -2,6 +2,12 @@
 const botonEncriptar = document.querySelector('.boton-encriptar');
 const botonDesencriptar = document.querySelector('.boton-desencriptar');
 
+const botonCopiar = document.createElement('button');
+botonCopiar.innerHTML = 'Copiar';
+const elementoPadre = document.querySelector('.mostrar-texto');
+botonCopiar.setAttribute('class', 'boton-desencriptar');
+
+
 botonEncriptar.addEventListener('click', function(){
     encriptarTexto();
 })
@@ -25,8 +31,10 @@ function encriptarTexto(){
 
     if (texto.length !== 0) {
         noImage();
+        btnCopiar();
         tituloMensaje.textContent = "Texto cifrado correctamente";
         parrafo.textContent = textoCifrado;
+        
     }
 
 
@@ -53,10 +61,22 @@ function desencriptarTexto(){
 
 }
 
+function btnCopiar(){
+    elementoPadre.appendChild(botonCopiar);
+    botonCopiar.addEventListener('click', function() {
+        const parrafo = document.querySelector('.parrafo');
+        const textoParacopiar = parrafo.textContent;
+        navigator.clipboard.writeText(textoParacopiar);
+    })
+
+}
+
 function noImage(){
     const imagen = document.querySelector('.imagen');
     if(imagen){
         imagen.classList.add('ocultar')
     }
 }
+
+
 
